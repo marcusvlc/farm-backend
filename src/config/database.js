@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: 'postgres',
+    password: 'Pass2020!',
     database: 'sqlnode',
     define: {
         timestamps: true,

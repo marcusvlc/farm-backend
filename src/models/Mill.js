@@ -1,18 +1,18 @@
 const{ Model, DataTypes } = require('sequelize');
 
-class Field extends Model {
+class Mill extends Model {
     static init(sequelizeConnection) {
         super.init({
-            code: {
+            id: {
                 type: DataTypes.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true
             },
-            latitude: DataTypes.STRING,
-            longitude: DataTypes.STRING
+            name: DataTypes.STRING,
         }, {
             sequelize: sequelizeConnection,
         })
     }
 }
 
-module.exports = Field;
+module.exports = Mill;

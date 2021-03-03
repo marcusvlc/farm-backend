@@ -1,18 +1,17 @@
 const{ Model, DataTypes } = require('sequelize');
 
-class Field extends Model {
+class Farm extends Model {
     static init(sequelizeConnection) {
         super.init({
             code: {
                 type: DataTypes.INTEGER,
                 primaryKey: true
             },
-            latitude: DataTypes.STRING,
-            longitude: DataTypes.STRING
+            name: DataTypes.STRING,
         }, {
             sequelize: sequelizeConnection,
         })
     }
 }
 
-module.exports = Field;
+module.exports = Farm;

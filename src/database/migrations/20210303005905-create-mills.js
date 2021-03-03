@@ -2,18 +2,13 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-     return await queryInterface.createTable('fields', { 
-       code: {
+     return await queryInterface.createTable('mills', { 
+       id: {
          type: Sequelize.INTEGER,
          primaryKey: true,
-         autoIncrement: false,
-         allowNull: false
+         autoIncrement: true,
        },
-       latitude: {
-         type: Sequelize.STRING,
-         allowNull: false,
-       },
-       longitude: {
+       name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -29,6 +24,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-     return queryInterface.dropTable('fields');
+     return queryInterface.dropTable('mills');
   }
 };
