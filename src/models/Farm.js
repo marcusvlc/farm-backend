@@ -12,6 +12,10 @@ class Farm extends Model {
             sequelize: sequelizeConnection,
         })
     }
+
+    static associate(models) {
+        this.belongsTo(models.Harvest, { foreignKey: 'harvest_code'})
+    }
 }
 
 module.exports = Farm;

@@ -13,6 +13,10 @@ class Harvest extends Model {
             sequelize: sequelizeConnection,
         })
     }
+
+    static associate(models) {
+        this.belongsTo(models.Mill, { foreignKey: 'mill_code'})
+    }
 }
 
 module.exports = Harvest;

@@ -13,6 +13,13 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
+      mill_code: {
+        type: Sequelize.INTEGER ,
+        allowNull: false,
+        references: { model:  'mills', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+       },
       ended_at: {
         type: Sequelize.DATE,
         allowNull: false,

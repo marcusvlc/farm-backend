@@ -13,6 +13,13 @@ module.exports = {
          type: Sequelize.STRING,
          allowNull: false,
        },
+       harvest_code: {
+        type: Sequelize.INTEGER ,
+        allowNull: false,
+        references: { model:  'harvests', key: 'code' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+       },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

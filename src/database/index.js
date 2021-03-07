@@ -12,6 +12,8 @@ Farm.init(connection);
 Harvest.init(connection);
 Mill.init(connection);
 
-//Field.associate(connection.models);
+Harvest.associate(connection.models);
+Field.associate(connection.models);
+Farm.associate(connection.models);
 
 module.exports = connection;

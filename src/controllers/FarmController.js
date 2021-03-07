@@ -1,5 +1,4 @@
-const Field = require('../models/Field');
-const { showAll } = require('./HarvestController');
+const Farm = require('../models/Farm');
 
 module.exports = {
     async store(req, res) {

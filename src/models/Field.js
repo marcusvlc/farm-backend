@@ -13,6 +13,11 @@ class Field extends Model {
             sequelize: sequelizeConnection,
         })
     }
+
+    static associate(models) {
+        this.belongsTo(models.Farm, { foreignKey: 'farm_code'})
+    }
+    
 }
 
 module.exports = Field;
