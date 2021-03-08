@@ -1,4 +1,5 @@
 const express = require('express');
+const FarmController = require('./controllers/FarmController');
 const FieldController = require('./controllers/FieldControlleer');
 const HarvestController = require('./controllers/HarvestController');
 const MillController = require('./controllers/MillController');
@@ -18,5 +19,10 @@ routes.get('/mills', MillController.showAll);
 
 routes.post('/harvest', HarvestController.store);
 routes.get('/harvests', HarvestController.showAll);
+
+// Farm Endpoints
+
+routes.post('/farm', FarmController.store);
+routes.get('/farms', FarmController.showAll);
 
 module.exports = routes;

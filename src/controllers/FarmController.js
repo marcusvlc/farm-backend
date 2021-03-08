@@ -2,15 +2,15 @@ const Farm = require('../models/Farm');
 
 module.exports = {
     async store(req, res) {
-        const { code, latitude, longitude } = req.body;
+        const { code, name, harvest_code } = req.body;
 
-        const field = await Field.create({code, latitude, longitude})
+        const farm = await Farm.create({code, name, harvest_code})
 
-        return res.json(field)
+        return res.json(farm)
     },
     async showAll(req, res) {
-        const fields = await Field.findAll()
+        const farms = await Farm.findAll()
 
-        return res.json(fields)
+        return res.json(farms)
     }
 }

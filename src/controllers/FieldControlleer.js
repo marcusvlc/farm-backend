@@ -1,11 +1,16 @@
 const Field = require('../models/Field');
-const { showAll } = require('./HarvestController');
 
 module.exports = {
     async store(req, res) {
-        const { code, latitude, longitude } = req.body;
+        const { code, latitude, longitude, farm_code } = req.body;
 
-        const field = await Field.create({code, latitude, longitude})
+        const searchedField = await Field.findByPk(code);
+
+        if(searchedField) return res.status(409).send({fail: true, message: "Não é possível cadastrar dois campos com o mesmo código."});
+
+        console.log(code, latitude, longitude, farm_code)
+        const field = await Field.create({code, latitude, longitude, farm_code})
+
 
         return res.json(field)
     },
